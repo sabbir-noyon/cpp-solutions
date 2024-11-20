@@ -3,9 +3,9 @@
 
 using namespace std;
 
-
+// function to multiply two matrices
 vector<vector<int>> multiplyMatrices(const vector<vector<int>>& mat1, const vector<vector<int>>& mat2, int row1, int col1, int row2, int col2) {
-   
+    
     if (col1 != row2) {
         cout << "Matrix multiplication is not possible!" << endl;
         exit(0);
@@ -13,7 +13,7 @@ vector<vector<int>> multiplyMatrices(const vector<vector<int>>& mat1, const vect
 
     vector<vector<int>> result(row1, vector<int>(col2, 0)); 
 
-
+    // multiply the matrices
     for (int i = 0; i < row1; i++) {
         for (int j = 0; j < col2; j++) {
             for (int k = 0; k < col1; k++) {
@@ -25,7 +25,7 @@ vector<vector<int>> multiplyMatrices(const vector<vector<int>>& mat1, const vect
     return result;
 }
 
-
+// function to display matrix
 void displayMatrix(const vector<vector<int>>& matrix, int rows, int cols) {
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
