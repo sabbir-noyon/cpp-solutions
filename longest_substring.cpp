@@ -9,18 +9,15 @@ int longestUniqueSubstring(string s) {
     int maxLength = 0;
     int start = 0; 
 
-    
     for (int end = 0; end < s.length(); end++) {
        
         if (charMap.find(s[end]) != charMap.end()) {
             start = max(start, charMap[s[end]] + 1);
         }
 
+       charMap[s[end]] = end;
        
-        charMap[s[end]] = end;
-
-        
-        maxLength = max(maxLength, end - start + 1);
+       maxLength = max(maxLength, end - start + 1);
     }
 
     return maxLength;
